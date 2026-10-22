@@ -1,10 +1,10 @@
-# ✈️ Sistema de Gestão de Viagens (Full-Stack PWA)
+# Sistema de Gestão de Viagens
 
 Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a disciplina de Programação Web (CC — IFSUL Campus Passo Fundo). O sistema permite o gerenciamento completo de destinos turísticos, clientes e pacotes de viagens vinculados.
 
 ---
 
-## 🔗 Links de Entrega e Produção
+##  Links de Entrega e Produção
 
 * **Aplicação em Produção (Frontend Vercel):** [https://projeto-pw-sistema-de-viagens.vercel.app](https://projeto-pw-sistema-de-viagens.vercel.app)
 * **API em Produção (Backend Render):** [https://projeto-pw-sistema-de-viagens.onrender.com](https://projeto-pw-sistema-de-viagens.onrender.com)
@@ -12,7 +12,7 @@ Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a dis
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 * **Frontend:** React, TypeScript, Vite, React Router DOM, React-Bootstrap, Bootstrap Icons.
 * **Backend:** Node.js, Express, Drizzle ORM, CORS.
@@ -24,7 +24,7 @@ Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a dis
 
 ---
 
-## 📋 Atendimento aos Requisitos da Disciplina
+##  Atendimento aos Requisitos da Disciplina
 
 ### 1. Banco de Dados e API (Peso 2.0)
 * **Modelagem Relacional (≥ 3 tabelas):**
@@ -46,16 +46,16 @@ Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a dis
 
 ---
 
-## 🧭 Guia de Navegação no Código
+##  Guia de Navegação no Código
 
 Use este mapa caso a professora peça para você abrir e explicar os arquivos no VS Code:
 
-### 📁 Backend (`viagens_api/`)
+###  Backend (`viagens_api/`)
 * **`src/db/schema.js`**: Contém a definição das tabelas Drizzle ORM, incluindo a Foreign Key de `pacotes.destino_id` referenciando `destinos.id`.
 * **`src/db/connection.js`**: Configuração do pool de conexão PostgreSQL utilizando a variável `DATABASE_URL`.
 * **`src/index.js`**: Ponto de entrada do servidor Express. Aqui estão configurados o middleware de CORS, parser JSON e todos os endpoints das rotas CRUD.
 
-### 📁 Frontend (`viagens_frontend/`)
+###  Frontend (`viagens_frontend/`)
 * **`src/services/api.ts`**: Centraliza a URL base da API em nuvem (`onrender.com`).
 * **`src/utils/validacoes.ts`**: Funções puras de máscara de telefone, validação de e-mail, nome composto e restrições de data/preço.
 * **`src/pages/Destinos.tsx`**: Tela com o CRUD de destinos, usando listas controladas para clima e países.
@@ -66,7 +66,7 @@ Use este mapa caso a professora peça para você abrir e explicar os arquivos no
 
 ---
 
-## 💻 Execução Local
+##  Execução Local
 
 Caso queira rodar o projeto localmente:
 
