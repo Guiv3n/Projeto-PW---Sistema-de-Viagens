@@ -2,15 +2,6 @@
 
 Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a disciplina de Programação Web (CC — IFSUL Campus Passo Fundo). O sistema permite o gerenciamento completo de destinos turísticos, clientes e pacotes de viagens vinculados.
 
----
-
-##  Links de Entrega e Produção
-
-* **Aplicação em Produção (Frontend Vercel):** [https://projeto-pw-sistema-de-viagens.vercel.app](https://projeto-pw-sistema-de-viagens.vercel.app)
-* **API em Produção (Backend Render):** [https://projeto-pw-sistema-de-viagens.onrender.com](https://projeto-pw-sistema-de-viagens.onrender.com)
-* **Repositório GitHub:** `https://github.com/Guiv3n/Projeto-PW---Sistema-de-Viagens`
-
----
 
 ##  Tecnologias Utilizadas
 
