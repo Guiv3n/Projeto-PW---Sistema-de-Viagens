@@ -176,71 +176,73 @@ export const Pacotes = () => {
 
   return (
     <Container>
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2>Gestão de Pacotes de Viagem</h2>
-        <Button variant="primary" onClick={abrirModalNovo} disabled={destinos.length === 0}>
-          <i className="bi bi-box-seam me-1"></i> Novo Pacote
-        </Button>
-      </div>
+      <div className="content-card">
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h2 className="page-title">Gestão de Pacotes de Viagem</h2>
+          <Button variant="primary" onClick={abrirModalNovo} disabled={destinos.length === 0}>
+            <i className="bi bi-box-seam me-1"></i> Novo Pacote
+          </Button>
+        </div>
 
-      {destinos.length === 0 && (
-        <Alert variant="warning">
-          É necessário cadastrar pelo menos um destino antes de criar um pacote.
-        </Alert>
-      )}
+        {destinos.length === 0 && (
+          <Alert variant="warning">
+            É necessário cadastrar pelo menos um destino antes de criar um pacote.
+          </Alert>
+        )}
 
-      {alerta && (
-        <Alert variant={alerta.tipo} dismissible onClose={() => setAlerta(null)}>
-          {alerta.texto}
-        </Alert>
-      )}
+        {alerta && (
+          <Alert variant={alerta.tipo} dismissible onClose={() => setAlerta(null)}>
+            {alerta.texto}
+          </Alert>
+        )}
 
-      <Table striped bordered hover responsive>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Destino</th>
-            <th>Preço</th>
-            <th>Embarque</th>
-            <th>Vagas</th>
-            <th>Status</th>
-            <th style={{ width: '150px' }}>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pacotes.map((p) => (
-            <tr key={p.id}>
-              <td>{p.id}</td>
-              <td>{p.titulo}</td>
-              <td>{p.cidadeDestino} - {p.paisDestino}</td>
-              <td>R$ {Number(p.preco).toFixed(2)}</td>
-              <td>{new Date(p.dataEmbarque).toLocaleDateString('pt-BR')}</td>
-              <td>{p.vagas}</td>
-              <td>
-                {p.ativo ? (
-                  <Badge bg="success">Disponível</Badge>
-                ) : (
-                  <Badge bg="secondary">Esgotado</Badge>
-                )}
-              </td>
-              <td>
-                <Button variant="warning" size="sm" className="me-2" onClick={() => abrirModalEditar(p)}>
-                  <i className="bi bi-pencil"></i>
-                </Button>
-                <Button variant="danger" size="sm" onClick={() => excluir(p.id)}>
-                  <i className="bi bi-trash"></i>
-                </Button>
-              </td>
-            </tr>
-          ))}
-          {pacotes.length === 0 && (
+        <Table striped bordered hover responsive>
+          <thead>
             <tr>
-              <td colSpan={8} className="text-center">Nenhum pacote cadastrado.</td>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Destino</th>
+              <th>Preço</th>
+              <th>Embarque</th>
+              <th>Vagas</th>
+              <th>Status</th>
+              <th style={{ width: '150px' }}>Ações</th>
             </tr>
-          )}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {pacotes.map((p) => (
+              <tr key={p.id}>
+                <td>{p.id}</td>
+                <td>{p.titulo}</td>
+                <td>{p.cidadeDestino} - {p.paisDestino}</td>
+                <td>R$ {Number(p.preco).toFixed(2)}</td>
+                <td>{new Date(p.dataEmbarque).toLocaleDateString('pt-BR')}</td>
+                <td>{p.vagas}</td>
+                <td>
+                  {p.ativo ? (
+                    <Badge bg="success">Disponível</Badge>
+                  ) : (
+                    <Badge bg="secondary">Esgotado</Badge>
+                  )}
+                </td>
+                <td>
+                  <Button variant="light" size="sm" className="btn-action-edit" onClick={() => abrirModalEditar(p)}>
+                    <i className="bi bi-pencil"></i>
+                  </Button>
+                  <Button variant="light" size="sm" className="btn-action-delete" onClick={() => excluir(p.id)}>
+                    <i className="bi bi-trash"></i>
+                  </Button>
+                </td>
+              </tr>
+            ))}
+            {pacotes.length === 0 && (
+              <tr>
+                <td colSpan={8} className="text-center">Nenhum pacote cadastrado.</td>
+              </tr>
+            )}
+          </tbody>
+        </Table>
+      </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Form onSubmit={salvar} noValidate>

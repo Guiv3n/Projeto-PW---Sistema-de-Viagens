@@ -109,3 +109,133 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Paleta base e fundo da aplicação */
+body {
+  background-color: #f1f5f9; /* Cinza claro suave */
+  color: #334155;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+/* Barra de Navegação estilizada */
+.custom-navbar {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important; /* Degradê azul suave/mar */
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+  margin-bottom: 2rem;
+}
+
+.custom-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.custom-navbar .nav-link {
+  color: #e0f2fe !important;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+}
+
+/* Cartões e Containers de Conteúdo */
+.content-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  padding: 1.75rem;
+  margin-top: 1rem;
+}
+
+/* Cabeçalhos de seção */
+.page-title {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botão principal em Azul Celeste */
+.btn-primary {
+  background-color: #0ea5e9 !important;
+  border-color: #0ea5e9 !important;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1.1rem;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-1px);
+}
+
+/* Tabelas com cabeçalho azul suave e linhas alternadas */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  margin-top: 1rem;
+}
+
+.table thead th {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #bae6fd;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.9rem;
+}
+
+.table tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+.table tbody td {
+  padding: 0.85rem;
+  vertical-align: middle;
+  border-color: #f1f5f9;
+}
+
+/* Botões de Ação na Tabela */
+.btn-action-edit {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+.btn-action-edit:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.btn-action-delete {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 6px;
+}
+
+.btn-action-delete:hover {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}

@@ -111,53 +111,55 @@ export const Destinos = () => {
 
   return (
     <Container>
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2>Gerenciamento de Destinos</h2>
-        <Button variant="primary" onClick={abrirModalNovo}>
-          <i className="bi bi-plus-circle me-1"></i> Novo Destino
-        </Button>
-      </div>
+      <div className="content-card">
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h2 className="page-title">Gerenciamento de Destinos</h2>
+          <Button variant="primary" onClick={abrirModalNovo}>
+            <i className="bi bi-plus-circle me-1"></i> Novo Destino
+          </Button>
+        </div>
 
-      {alerta && (
-        <Alert variant={alerta.tipo} dismissible onClose={() => setAlerta(null)}>
-          {alerta.texto}
-        </Alert>
-      )}
+        {alerta && (
+          <Alert variant={alerta.tipo} dismissible onClose={() => setAlerta(null)}>
+            {alerta.texto}
+          </Alert>
+        )}
 
-      <Table striped bordered hover responsive>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Cidade</th>
-            <th>País</th>
-            <th>Clima</th>
-            <th style={{ width: '150px' }}>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {destinos.map((d) => (
-            <tr key={d.id}>
-              <td>{d.id}</td>
-              <td>{d.cidade}</td>
-              <td>{d.pais}</td>
-              <td>{d.clima}</td>
-              <td>
-                <Button variant="warning" size="sm" className="me-2" onClick={() => abrirModalEditar(d)}>
-                  <i className="bi bi-pencil"></i>
-                </Button>
-                <Button variant="danger" size="sm" onClick={() => excluir(d.id)}>
-                  <i className="bi bi-trash"></i>
-                </Button>
-              </td>
-            </tr>
-          ))}
-          {destinos.length === 0 && (
+        <Table striped bordered hover responsive>
+          <thead>
             <tr>
-              <td colSpan={5} className="text-center">Nenhum destino cadastrado.</td>
+              <th>ID</th>
+              <th>Cidade</th>
+              <th>País</th>
+              <th>Clima</th>
+              <th style={{ width: '150px' }}>Ações</th>
             </tr>
-          )}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {destinos.map((d) => (
+              <tr key={d.id}>
+                <td>{d.id}</td>
+                <td>{d.cidade}</td>
+                <td>{d.pais}</td>
+                <td>{d.clima}</td>
+                <td>
+                  <Button variant="light" size="sm" className="btn-action-edit" onClick={() => abrirModalEditar(d)}>
+                    <i className="bi bi-pencil"></i>
+                  </Button>
+                  <Button variant="light" size="sm" className="btn-action-delete" onClick={() => excluir(d.id)}>
+                    <i className="bi bi-trash"></i>
+                  </Button>
+                </td>
+              </tr>
+            ))}
+            {destinos.length === 0 && (
+              <tr>
+                <td colSpan={5} className="text-center">Nenhum destino cadastrado.</td>
+              </tr>
+            )}
+          </tbody>
+        </Table>
+      </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Form onSubmit={salvar}>

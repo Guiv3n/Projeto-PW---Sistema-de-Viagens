@@ -122,53 +122,55 @@ export const Clientes = () => {
 
   return (
     <Container>
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h2>Gestão de Clientes</h2>
-        <Button variant="primary" onClick={abrirModalNovo}>
-          <i className="bi bi-person-plus me-1"></i> Novo Cliente
-        </Button>
-      </div>
+      <div className="content-card">
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h2 className="page-title">Gestão de Clientes</h2>
+          <Button variant="primary" onClick={abrirModalNovo}>
+            <i className="bi bi-person-plus me-1"></i> Novo Cliente
+          </Button>
+        </div>
 
-      {alerta && (
-        <Alert variant={alerta.tipo} dismissible onClose={() => setAlerta(null)}>
-          {alerta.texto}
-        </Alert>
-      )}
+        {alerta && (
+          <Alert variant={alerta.tipo} dismissible onClose={() => setAlerta(null)}>
+            {alerta.texto}
+          </Alert>
+        )}
 
-      <Table striped bordered hover responsive>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th style={{ width: '150px' }}>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {clientes.map((c) => (
-            <tr key={c.id}>
-              <td>{c.id}</td>
-              <td>{c.nome}</td>
-              <td>{c.email}</td>
-              <td>{c.telefone}</td>
-              <td>
-                <Button variant="warning" size="sm" className="me-2" onClick={() => abrirModalEditar(c)}>
-                  <i className="bi bi-pencil"></i>
-                </Button>
-                <Button variant="danger" size="sm" onClick={() => excluir(c.id)}>
-                  <i className="bi bi-trash"></i>
-                </Button>
-              </td>
-            </tr>
-          ))}
-          {clientes.length === 0 && (
+        <Table striped bordered hover responsive>
+          <thead>
             <tr>
-              <td colSpan={5} className="text-center">Nenhum cliente cadastrado.</td>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th style={{ width: '150px' }}>Ações</th>
             </tr>
-          )}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {clientes.map((c) => (
+              <tr key={c.id}>
+                <td>{c.id}</td>
+                <td>{c.nome}</td>
+                <td>{c.email}</td>
+                <td>{c.telefone}</td>
+                <td>
+                  <Button variant="light" size="sm" className="btn-action-edit" onClick={() => abrirModalEditar(c)}>
+                    <i className="bi bi-pencil"></i>
+                  </Button>
+                  <Button variant="light" size="sm" className="btn-action-delete" onClick={() => excluir(c.id)}>
+                    <i className="bi bi-trash"></i>
+                  </Button>
+                </td>
+              </tr>
+            ))}
+            {clientes.length === 0 && (
+              <tr>
+                <td colSpan={5} className="text-center">Nenhum cliente cadastrado.</td>
+              </tr>
+            )}
+          </tbody>
+        </Table>
+      </div>
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Form onSubmit={salvar} noValidate>

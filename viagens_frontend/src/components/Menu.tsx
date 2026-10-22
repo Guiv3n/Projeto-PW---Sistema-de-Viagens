@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Menu = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
-      <Container>
+<Navbar expand="lg" className="custom-navbar">      <Container>
         <Navbar.Brand as={Link} to="/">
           <i className="bi bi-airplane-engines me-2"></i>
           Gestão de Viagens
