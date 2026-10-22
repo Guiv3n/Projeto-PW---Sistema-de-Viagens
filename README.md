@@ -26,14 +26,14 @@ Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a dis
 
 ##  Atendimento aos Requisitos da Disciplina
 
-### 1. Banco de Dados e API (Peso 2.0)
+### 1. Banco de Dados e API 
 * **Modelagem Relacional (≥ 3 tabelas):**
   * `destinos`: ID, cidade, país, clima.
   * `clientes`: ID, nome, email, telefone.
   * `pacotes`: ID, título, preço, data de embarque, vagas, status ativo e `destino_id` (**Chave Estrangeira** referenciando `destinos.id` com `ON DELETE CASCADE`).
 * **CRUD Completo:** Endpoints REST implementados para todas as operações (`GET`, `POST`, `PUT`, `DELETE`) em cada uma das três tabelas.
 
-### 2. Frontend e PWA (Peso 1.5)
+### 2. Frontend e PWA 
 * **CRUD Visual:** Interface responsiva com tabelas de listagem, modais para cadastro e edição, e confirmação de exclusão.
 * **Regras de Negócio e Validações:**
   * **Destinos:** Seleção padronizada de países e climas pré-definidos.
@@ -41,7 +41,7 @@ Aplicação Web Progressiva (PWA) desenvolvida como trabalho prático para a dis
   * **Pacotes:** Preenchimento dinâmico do destino via `<select>`, bloqueio de datas passadas (`min` data atual), preço positivo e número de vagas maior que zero.
 * **PWA:** Configurado com `manifest.json`, suporte a exibição `standalone`, ícones e tema.
 
-### 3. Hospedagem em Nuvem (Peso 0.5)
+### 3. Hospedagem em Nuvem 
 * Backend e Frontend hospedados e comunicando-se publicamente na nuvem (Render + Vercel + Neon).
 
 ---
